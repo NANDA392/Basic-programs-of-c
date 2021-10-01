@@ -1,0 +1,42 @@
+#include<stdio.h>
+typedef struct btree
+{
+    struct btree *lc;
+    int data;
+    struct btree *rc;
+}
+btree *root;
+
+
+main()
+{
+    int ch,data;
+    btree *temp,*parent;
+    root=NULL;
+    while(1)
+    {
+        printf("select:\n\n1. Insert\n2. Display\n3. exit\n");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1:
+                printf("enter the data to be inserted\n");
+                scanf("%d",&data);
+                insert(&root,data);
+                break;
+            case 2:
+                disp(&root);
+                break;
+            case 3:
+                exit(0);
+        }
+    }
+}
+
+
+void insert(btree **r,int data)
+{
+    if(*r==NULL)
+    {
+        *r=(btree *)malloc(sizeof(btree));
+

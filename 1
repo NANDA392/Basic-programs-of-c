@@ -1,0 +1,23 @@
+#include<stdio.h>
+void print(char *p,char *q)
+{
+    int i;
+    for(i=0;*(p+i)!='\0';i++)
+    {
+        if(*(p+i)>='A'&&*(p+i)<='Z')
+            *(q+i)=*(p+i)+32;
+        else if(*(p+i)>='a'&&*(p+i)<='z')
+            *(q+i)=*(p+i)-32;
+    }
+
+}
+int main()
+{
+    char *a[5]={"nanda","kumar","Mahesh","kRishNa","Planet"};
+    char b[5][10];
+    int i,j;
+    for(i=0i<5;i++)
+    print(a[i],b[i]);
+    printf("%s\n",a[0]);
+}
+

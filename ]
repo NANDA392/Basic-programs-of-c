@@ -1,0 +1,16 @@
+#include<stdio.h>
+union u
+{
+    int a;
+    struct s
+    {
+        int x;
+        int y;
+        char c[15];
+    };
+};
+ 
+int main()
+{
+    union u.s s1;
+}
